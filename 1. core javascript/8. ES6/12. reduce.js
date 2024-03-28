@@ -120,15 +120,15 @@ function myReduce(array, callback, initialValue) {
 
 
 // 색깔별로 사과 개수 카운트하기
-// console.log('====================');
+console.log('====================');
 
-// const countByColor = appleBasket.reduce((count, apple) => {
+const countByColor = appleBasket.reduce((count, apple) => {
     
-//     if (apple.color in count) {
-//         count[apple.color]++;
-//     } else {
-//         count[apple.color] = 1;
-//     }
-//     return count;
-// }, {})
-// console.log(countByColor);
+    if (apple.color in count) {
+        count[apple.color]++;
+    } else {
+        count[apple.color] = 1;
+    }
+    return count;
+}, {})
+console.log(countByColor);
