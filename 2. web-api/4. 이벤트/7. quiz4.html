@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="text" id="colorInput" placeholder="색상 이름이나 HEX 코드를 입력하세요">
+    <div id="warning" style="color: red; display: none;">유효하지 않은 색상입니다!</div>
+
+    <script>
+
+        const $input = document.getElementById('colorInput');
+        const $body = document.querySelector('body');
+        const $warn = document.getElementById('warning');
+
+        $input.addEventListener('keyup', () => {
+            $body.style.background = $input.value;
+            if($body.style.background !== $input.value) {
+                $warn.style.display = 'block';
+            } else {
+                $warn.style.display = 'none';
+            }
+        });
+
+    </script>
+</body>
+</html>
