@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css" rel="stylesheet">
+    <style>
+        .wrap {
+            margin: 50px auto;
+            width: fit-content;
+            border: 2px solid #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            
+        }
+        .mainContainer {
+            width: 480px;
+            height: 270px;
+            /* border: 2px solid red; */
+            display: flex;
+            align-items: center;
+            background: white;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        .mainPhotoBox {
+            flex: 8;
+            border: 2px solid green;
+            height: 95%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .mainPhoto img {
+            max-width: 100%;
+        }
+        .btn {
+            flex: 1;
+            color: white;
+            background: #3030ff;
+            border: 0px solid #000;
+            padding: 10px;
+        }
+        .photoContainer {
+            border: 2px solid #000;
+            display: flex;
+            flex-direction: row;
+        }
+        .wrap .photoContainer .box {
+            width: 100px;
+            height: 75px;
+            border: 1px solid purple;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .wrap .photoContainer .box img {
+            max-width: 100%;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="mainContainer">
+            <button class="btn before">이전</button>
+            <div class="mainPhotoBox"><img src="" alt="" lass="mainPhoto"></div>
+            <button class="btn after">다음</button>
+        </div>
+        <div class="photoContainer">
+            <div class="box"><img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FCNxUY%2Fbtqw7dnElRU%2FHuVZgvpT6J8n4aEYFathEk%2Fimg.jpg" alt="" class="photo1"></div>
+            <div class="box"><img src="https://mblogthumb-phinf.pstatic.net/MjAyMTEwMjlfMjM2/MDAxNjM1NDg2OTM3MDc2.-ThCEMQKLgncudeEeP9icT07wpITM2kkfQ-wpRy6jwcg.PLLaGRGtJ8fkqo2TpPv7rCoj04bKohgpSsNQNDqW11og.PNG.merrily1204/%EC%B9%B4%EC%B9%B4%EC%98%A4_%EB%85%B8%EB%9E%80%EC%83%89.png?type=w800" alt="" class="photo2"></div>
+            <div class="box"><img src="https://vos.line-scdn.net/strapi-cluster-instance-bucket-84/brand_03_2e76928f15.jpeg" alt="" class="photo3"></div>
+            <div class="box"><img src="https://mblogthumb-phinf.pstatic.net/20160902_124/ppanppane_14728003076370owh6_PNG/%C4%ED%C6%CE%B7%CE%B0%ED_%281%29.png?type=w800" alt="" class="photo4"></div>
+        </div>
+    </div>
+
+    <script>
+        const $mainPhoto = document.querySelector('.mainPhoto');
+        const $box = document.querySelector('.box');        
+        const $beforeBtn = document.querySelector('.before');
+        const $afterBtn = document.querySelector('.after');
+
+        $mainPhoto.setAttribute('src', $box.querySelector('img').getAttribute('src'));
+        // console.log($box.querySelector('img').getAttribute('src'));
+    </script>
+</body>
+</html>
